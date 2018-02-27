@@ -6,7 +6,6 @@ import com.example.spring5recipeapp.repositories.CategoryRepository;
 import com.example.spring5recipeapp.repositories.UnitOfMeasureRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.tools.jconsole.Plotter;
 
 import java.util.Optional;
 
