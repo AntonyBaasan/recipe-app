@@ -25,8 +25,9 @@ public class Recipe {
     @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
 
-    @ManyToMany()
-    private Category categories;
+    @ManyToMany
+    @JoinTable(name="recipe_table", joinColumns=@JoinColumn(name="recipe_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories;
 
     public Set<Ingredient> getIngredients() {
         return ingredients;
@@ -84,4 +85,11 @@ public class Recipe {
         this.difficulty = difficulty;
     }
 
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
 }
